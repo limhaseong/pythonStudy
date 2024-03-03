@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}뷰{% endblock %}
+{% block content %}
+    <div class="card fluid pt-3 h-100">
+        <div class="card-body">
+
+            <!-- Dark Table -->
+            <div class="container text-center fluid">
+            <table class="table table-light h-75">
+                <tbody>
+                    <tr>
+                        <td class="col-2 text-end border-end">제목</td>
+                        <td class="col-10">{{ article.title }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-end border-end">저 자</td>
+                        <td>{{ article.name }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-end border-end h-100">내 용</td>
+                        <td>{{ article.contents }}</td>
+                    </tr>
+                    <tr>
+                        <td class="text-end border-end">이메일</td>
+                        <td>{{ article.email }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- End Dark Table -->
+            <div>
+            {% if user.get_username == article.user_id %}
+                <a href="{% url 'bbs:edit' article.seq %}"><span class="btn btn-outline-primary">수정</span></a>
+                <a href="{% url 'bbs:delete' article.seq %}"><span class="btn btn-outline-primary">삭제</span></a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
