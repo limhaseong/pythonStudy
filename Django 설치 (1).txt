@@ -1,0 +1,47 @@
+-- 파이썬 업그레이드
+py -m pip install --upgrade pip
+
+--장고 설치 3
+py -m pip install Django
+
+--현 폴더에 장고 프로젝트 생성 4
+django-admin startproject config .
+
+--앱을 새로 만들때 5 bbs
+py manage.py startapp app.name
+
+--서버 구동 & 웹싸 접속 6
+python manage.py runserver ip:port(생략 가능)
+
+--서버 중지
+Ctrl + C
+
+--mygration folder make
+py manage.py makemigrations app.name
+-- mygration in db (변경사항 DB에 반영)
+py manage.py migrate
+
+-- column add -> ', default=None, null=True' add
+py manage.py showmigrations	DB 변경사항 목록 상태 확인
+py manage.py createsuperuser	관리자 계정 생성
+py manage.py changepassword	비번 변경
+py manage.py sqlmigrate		실행할 SQL문 출력 확인
+py manage.py dumpdata		DB 백업
+py manage.py loaddata		DB 복구
+py manage.py flush		table 내용만 삭제
+py manage.py shell			shell 실행 (모델 테스트)
+py manage.py dbshell		db접근 shell실행 (SQL문 이용 DB 직접 수정)
+
+--vscode 웹브라우져 변경
+1. open in browser - chrome 등록
+
+pip install django-debug-toolbar	디버깅
+
+pip install opencv-python		이미지 동영상 처리
+pip install dlib			얼굴 안면인식
+
+pip install celery			progress bar
+pip install celery-progress		progress bar
+
+pip install opencv-python
+pip install moviepy

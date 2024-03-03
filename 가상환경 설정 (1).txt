@@ -1,0 +1,34 @@
+-- 가상환경 설치 설정
+pip install virtualenv, pyenv(맥)	// 기존의 venv를 사용
+virtualenv 프로젝트명		// virtualenv로 만들때
+1. py -m venv .venv
+python3.3 -m venv .env		// python 버전 맞출때
+
+--가상환경 실행/종료/삭제
+cd 프로젝트명(폴더명) (enter) source [venvname]/bins/activate (enter) [Mac]
+2. cd 프로젝트명(폴더명) (enter) source [venvname]/Scripts/activate.bat (enter) [Win]
+deactivate
+sudo rm -rf 가상환경이름
+rm -rf /* (전체삭제)
+
+-- 가상환경 실행/확인/삭제 (Anaconda)
+conda activate eunnen_env
+conda info --envs // conda env list
+conda remove -n 가상환경이름 --all
+
+-- 패키지 리스트 / 업그레이드
+pip list
+python -m pip install --upgrade pip
+
+-- 설치된 패키지 리스트 저장 <-> 패키지 일괄 설치/삭제
+pip freeze > requirements.txt
+pip install -r requirements.txt
+pip uninstall -r requirements.txt -y (all yes)
+
+-- 업그레이드 후 에러시
+pip install --upgrade pip -> No module named ‘pip’에러
+python -m ensurepip			복구만 시도
+python -m ensurepip --upgrade		복구후 업그레이드 시도
+
+-- where python 가상환경 외 2개뜰 경우
+윈도우키+s 에서 앱 실행 별칭 관리 해당 Python off
